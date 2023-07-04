@@ -14,6 +14,7 @@ import Image from "next/image";
 import { LoadingPage, LoadingSpinner } from "~/components/loading";
 import { useState } from "react";
 import Link from "next/link";
+import { PageLayout } from "~/components/layout";
 
 const CreatePostWizard = () => {
   const { user } = useUser();
@@ -135,21 +136,18 @@ const Home: NextPage = () => {
   if (!userLoaded) return <div />;
 
   return (
-    <>
-      <main className="flex h-screen justify-center">
-        <div className="h-full w-full border-x border-slate-400 md:max-w-2xl">
-          <div className="border-b border-slate-400 p-4">
-            {!isSignedIn && (
-              <div className="flex justify-center">
-                <SignInButton />
-              </div>
-            )}
-            {!!isSignedIn && <CreatePostWizard />}
+    <PageLayout>
+      <div className="border-b border-slate-400 p-4">
+        {!isSignedIn && (
+          <div className="flex justify-center">
+            <SignInButton />
           </div>
-          <Feed />
-        </div>
-      </main>
-    </>
+        )}
+        {!!isSignedIn && <CreatePostWizard />}
+      </div>
+
+      <Feed />
+    </PageLayout>
   );
 };
 

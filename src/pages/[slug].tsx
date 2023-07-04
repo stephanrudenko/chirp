@@ -15,6 +15,7 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
         <title>{data.username}</title>
       </Head>
       <PageLayout>
+<<<<<<< HEAD
         <div className="relative h-32 bg-slate-600">
           <Image
             src={data.profileImageUrl}
@@ -29,6 +30,9 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
           data.username ?? ""
         }`}</div>
         <div className="w-full border-b border-slate-400"></div>
+=======
+        <div>{data.username}</div>
+>>>>>>> fcd2cf30534292ed4db7e6c4ac700342715fe165
       </PageLayout>
     </>
   );
@@ -39,7 +43,10 @@ import { appRouter } from "~/server/api/root";
 import { prisma } from "~/server/db";
 import superjson from "superjson";
 import { PageLayout } from "~/components/layout";
+<<<<<<< HEAD
 import Image from "next/image";
+=======
+>>>>>>> fcd2cf30534292ed4db7e6c4ac700342715fe165
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const helpers = createServerSideHelpers({
